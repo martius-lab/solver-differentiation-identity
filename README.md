@@ -1,12 +1,16 @@
-# solver-differentiation-identity
-Repository for the code of our ICLR paper: [Backpropagation through Combinatorial Algorithms: Identity with Projection Works](https://arxiv.org/abs/2205.15213) 
+# [Backpropagation through Combinatorial Algorithms: Identity with Projection Works](https://arxiv.org/abs/2205.15213) 
+By [Subham S. Sahoo*](https://s-sahoo.github.io), [Anselm Paulus*](https://www.cs.cornell.edu/~kuleshov), [Marin Vlastelica](https://jimimvp.github.io), [Vít Musil](https://gimli.ms.mff.cuni.cz/~vejtek/), [Volodymyr Kuleshov](https://www.cs.cornell.edu/~kuleshov/), [Georg Martius](https://is.mpg.de/person/gmartius) 
+
+Embedding discrete solvers as differentiable layers equips deep learning models with combinatorial expressivity and discrete reasoning. However, these solvers have zero or undefined derivatives, necessitating a meaningful gradient replacement for effective learning. Prior methods smooth or relax solvers, or interpolate loss landscapes, often requiring extra solver calls, hyperparameters, or sacrificing performance. We propose a principled approach leveraging the geometry of the discrete solution space, treating the solver as a negative identity on the backward pass, with theoretical justification. Experiments show our hyperparameter-free method competes with complex alternatives across tasks like discrete sampling, graph matching, and image retrieval. We also introduce a generic regularization that prevents cost collapse and enhances robustness, replacing previous margin-based approaches.
+
+Link to the paper on [arXiv](https://arxiv.org/abs/2205.15213).
 
 ## Requirements
-* tensorflow==2.3.0 or tensorflow-gpu==2.3.0
-* numpy==1.18.5
-* matplotlib==3.1.1
-* scikit-learn==0.24.1
-* tensorflow-probability==0.7.0
+* `tensorflow==2.3.0` or `tensorflow-gpu==2.3.0`
+* `numpy==1.18.5`
+* `matplotlib==3.1.1`
+* `scikit-learn==0.24.1`
+* `tensorflow-probability==0.7.0`
 
 [IdentitySubsetLayer](https://github.com/martius-lab/solver-differentiation-identity/blob/main/discrete-VAE-experiments-neurips-identity.ipynb)
 class implements the backpropation through the sampling process of $k-hot$ vectors using our proposed identity method.
